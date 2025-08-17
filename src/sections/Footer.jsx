@@ -1,11 +1,21 @@
 import { socialImgs } from "../constants";
 
 const Footer = () => {
+  const handleOpenCV = () => {
+    // Ouvrir le CV dans un nouvel onglet
+    window.open('/assets/documents/TAKI EDDINE EL ATTARI CV.pdf', '_blank');
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="flex flex-col justify-center md:items-start items-center">
-          <p>Download CV</p>
+          <button 
+            onClick={handleOpenCV}
+            className="download-cv-btn cursor-pointer hover:opacity-80 transition-opacity"
+          >
+            View My CV
+          </button>
         </div>
         <div className="socials">
           {socialImgs.map((socialImg, index) => (

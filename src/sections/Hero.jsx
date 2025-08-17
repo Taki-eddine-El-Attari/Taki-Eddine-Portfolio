@@ -49,10 +49,10 @@ const Hero = () => {
                     <h1>that Deliver Results</h1>
                 </div>
 
-                <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+                {/*<p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
                     Hi, I’m Taki eddine el attari, a developer based in Morocco with a passion for
                     code.
-                </p>
+                </p>*/}
                 <Button
                     text="See My Work"
                     className="md:w-80 md:h-16 w-60 h-12"
@@ -68,7 +68,8 @@ const Hero = () => {
         </figure>
       </div>
 
-      <AnimatedCounter />
+      {/* <AnimatedCounter /> */}
+      
     </section>
   );
 }

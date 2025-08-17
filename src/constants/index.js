@@ -29,10 +29,10 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 15, suffix: "+", label: "Years of Experience" },
-  { value: 200, suffix: "+", label: "Satisfied Clients" },
-  { value: 108, suffix: "+", label: "Completed Projects" },
-  { value: 90, suffix: "%", label: "Client Retention Rate" },
+  { value: 1, suffix: "+", label: "Years of Experience" },
+  { value: 10, suffix: "+", label: "Projects Built" },
+  { value: 16, suffix: "+", label: "Technologies Learned" },
+  { value: 90, suffix: "%", label: "Learning Commitment" },
 ];
 
 const logoIconsList = [
@@ -263,6 +263,196 @@ const socialImgs = [
   },
 ];
 
+const myProjects = [
+  {
+    title: 'Podcastr - AI Podcast Platform',
+    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    subdesc:
+      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
+    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+    texture: '/textures/project/project1.mp4',
+    logo: '/assets/project-logo1.png',
+    logoStyle: {
+      backgroundColor: '#2A1816',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
+    title: 'LiveDoc - Real-Time Google Docs Clone',
+    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+    subdesc:
+      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
+    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+    texture: '/textures/project/project2.mp4',
+    logo: '/assets/project-logo2.png',
+    logoStyle: {
+      backgroundColor: '#13202F',
+      border: '0.2px solid #17293E',
+      boxShadow: '0px 0px 60px 0px #2F6DB54D',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
+    title: 'CarePulse - Health Management System',
+    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+    subdesc:
+      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
+    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+    texture: '/textures/project/project3.mp4',
+    logo: '/assets/project-logo3.png',
+    logoStyle: {
+      backgroundColor: '#60f5a1',
+      background:
+        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+      border: '0.2px solid rgba(208, 213, 221, 1)',
+      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
+    title: 'EcoTracker - Environmental Impact Monitor',
+    desc: 'EcoTracker is a comprehensive environmental monitoring application that helps users track and reduce their carbon footprint. It provides detailed insights into daily activities and suggests eco-friendly alternatives.',
+    subdesc:
+      'Built with React, Node.js, and MongoDB, EcoTracker features real-time data visualization, personalized recommendations, and community challenges to promote sustainable living.',
+    href: 'https://www.youtube.com/watch?v=example',
+    texture: '/textures/project/project4.mp4',
+    logo: '/assets/project-logo4.png',
+    logoStyle: {
+      backgroundColor: '#4CAF50',
+      border: '0.2px solid #45a049',
+      boxShadow: '0px 0px 60px 0px rgba(76, 175, 80, 0.3)',
+    },
+    spotlight: '/assets/spotlight4.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'Node.js',
+        path: '/assets/node.png',
+      },
+      {
+        id: 3,
+        name: 'MongoDB',
+        path: '/assets/mongodb.png',
+      },
+      {
+        id: 4,
+        name: 'Express.js',
+        path: '/assets/express.png',
+      },
+    ],
+  },
+  {
+    title: 'SmartHome Hub - IoT Control Center',
+    desc: 'SmartHome Hub is an intelligent home automation system that centralizes control of all smart devices. It provides a unified interface for managing lighting, security, climate control, and entertainment systems.',
+    subdesc:
+      'Developed using React Native, Python, and AWS IoT services, SmartHome Hub offers real-time monitoring, automated routines, and voice control integration for a seamless smart home experience.',
+    href: 'https://www.youtube.com/watch?v=example2',
+    texture: '/textures/project/project5.mp4',
+    logo: '/assets/project-logo5.png',
+    logoStyle: {
+      backgroundColor: '#2196F3',
+      border: '0.2px solid #1976D2',
+      boxShadow: '0px 0px 60px 0px rgba(33, 150, 243, 0.3)',
+    },
+    spotlight: '/assets/spotlight5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React Native',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'Python',
+        path: '/assets/python.svg',
+      },
+      {
+        id: 3,
+        name: 'AWS IoT',
+        path: '/assets/aws.png',
+      },
+      {
+        id: 4,
+        name: 'MQTT',
+        path: '/assets/mqtt.png',
+      },
+    ],
+  },
+];
+
 export {
   words,
   abilities,
@@ -275,4 +465,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  myProjects,
 };
