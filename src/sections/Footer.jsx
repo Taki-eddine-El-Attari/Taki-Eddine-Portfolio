@@ -3,7 +3,7 @@ import { socialImgs } from "../constants";
 const Footer = () => {
   const handleOpenCV = () => {
     // Ouvrir le CV dans un nouvel onglet
-    window.open('/assets/documents/TAKI EDDINE EL ATTARI CV.pdf', '_blank');
+    window.open('public/documents/TAKI EDDINE EL ATTARI CV.pdf', '_blank');
   };
 
   return (
