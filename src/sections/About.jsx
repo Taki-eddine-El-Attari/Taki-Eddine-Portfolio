@@ -139,8 +139,8 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I'm Taki eddine el Attari</p>
               <p className="grid-subtext">
-                With 12 years of experience, I have honed my skills in both frontend and backend dev, creating dynamic
-                and responsive websites.
+              A Full Stack Developer specializing in the MEAN stack. 
+              I combine technical expertise with a creative approach to build modern and efficient web applications.
               </p>
             </div>
           </div>
@@ -158,8 +158,8 @@ const About = () => {
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-                I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable
-                applications
+              I build complete, end-to-end web solutions using the MEAN stack, React, and Laravel to 
+              deliver powerful and modern applications.
               </p>
             </div>
           </div>
@@ -187,8 +187,8 @@ const About = () => {
               />
             </div>
             <div>
-              <p className="grid-headtext">I'm very flexible with time zone communications & locations</p>
-              <p className="grid-subtext">I&apos;m based in Tangier, Morocco and open to remote work worldwide.</p>
+              <p className="grid-headtext">Open to Global Opportunities</p>
+              <p className="grid-subtext">From my base in Tangier, Morocco, I offer flexible communication and a commitment to working effectively with teams in any time zone.</p>
               <Button2 name="Check my location" isBeam containerClass="w-full mt-10" onClick={handleLocateMe} />
             </div>
           </div>
@@ -204,10 +204,12 @@ const About = () => {
             <img src="assets/grid3.png" alt="grid-3" className="w-full h-[200px] sm:h-[266px] object-contain" />
 
             <div>
-              <p className="grid-headtext">My Passion for Coding</p>
+              <p className="grid-headtext">Driven by Code</p>
               <p className="grid-subtext">
-                I love solving problems and building things through code. Programming isn&apos;t just my
-                profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
+              My passion is centered on solving complex problems by building effective digital solutions. 
+              My skills in both coding and design allow me to be more creative, crafting applications that 
+              are not only powerful but also intuitive. I am always searching for the best and simplest solutions, 
+              believing that clarity and efficiency are the keys to a successful project.
               </p>
             </div>
           </div>

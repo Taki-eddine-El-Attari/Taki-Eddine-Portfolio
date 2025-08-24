@@ -433,11 +433,10 @@ section {
   width: 2px;
   background: linear-gradient(
     0deg,
-    rgba(69, 222, 196, 0) 0%,
-    #62e0ff 25%,
-    #52aeff 37.51%,
-    #fd5c79 62.83%,
-    #6d45ce 92.91%
+    #000000 0%,
+    #9a0532 40%,
+    #0377D0 60%,
+    #0618B8 100%
   );
 }
 
