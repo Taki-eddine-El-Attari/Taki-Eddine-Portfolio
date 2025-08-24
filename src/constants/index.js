@@ -91,54 +91,54 @@ const abilities = [
 
 const techStackImgs = [
   {
-    name: "React Developer",
-    imgPath: "/images/logos/react.png",
+    name: "Angular",
+    imgPath: "/images/logos/angular.png",
   },
   {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
+    name: "Laravel",
+    imgPath: "/images/logos/laravel.png",
   },
   {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
+    name: "TailwindCSS",
+    imgPath: "/images/logos/tailwind.png",
   },
   {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
+    name: "Postman",
+    imgPath: "/images/logos/postman.png",
   },
   {
-    name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
+    name: "Figma",
+    imgPath: "/images/logos/figma.png",
   },
 ];
 
 const techStackIcons = [
   {
-    name: "React Developer",
+    name: "React",
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0],
   },
   {
-    name: "Python Developer",
+    name: "Python",
     modelPath: "/models/python-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
-    name: "Backend Developer",
+    name: "Node.js",
     modelPath: "/models/node-transformed.glb",
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
-    name: "Interactive Developer",
+    name: "Three.js",
     modelPath: "/models/three.js-transformed.glb",
     scale: 0.05,
     rotation: [0, 0, 0],
   },
   {
-    name: "Project Manager",
+    name: "Git",
     modelPath: "/models/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
