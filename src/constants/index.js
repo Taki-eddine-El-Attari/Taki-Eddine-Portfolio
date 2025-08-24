@@ -1,19 +1,19 @@
 const navLinks = [
   {
-    name: "Work",
-    link: "#work",
+    name: "About",
+    link: "#about",
   },
   {
     name: "Experience",
     link: "#experience",
   },
   {
-    name: "Skills",
-    link: "#skills",
+    name: "Work",
+    link: "#projects",
   },
   {
-    name: "Testimonials",
-    link: "#testimonials",
+    name: "Skills",
+    link: "#skills",
   },
 ];
 
@@ -21,11 +21,11 @@ const words = [
   { text: "Ideas", imgPath: "/images/ideas.svg" },
   { text: "Concepts", imgPath: "/images/concepts.svg" },
   { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
+  { text: "Logic", imgPath: "/images/code.svg" },
   { text: "Concepts", imgPath: "/images/concepts.svg" },
   { text: "Ideas", imgPath: "/images/ideas.svg" },
   { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
+  { text: "Logic", imgPath: "/images/code.svg" },
 ];
 
 const counterItems = [

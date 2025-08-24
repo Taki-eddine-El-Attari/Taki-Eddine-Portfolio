@@ -6,12 +6,33 @@ import ContactExperience from "../components/models/contact/ContactExperience";
 
 const Contact = () => {
   const formRef = useRef(null);
+  const cardRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  // Mouse movement handler for border animation
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    // get the mouse position relative to the card
+    const rect = card.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left - rect.width / 2;
+    const mouseY = e.clientY - rect.top - rect.height / 2;
+
+    // calculate the angle from the center of the card to the mouse
+    let angle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
+
+    // adjust the angle so that it's between 0 and 360
+    angle = (angle + 360) % 360;
+
+    // set the angle as a CSS variable
+    card.style.setProperty("--start", angle + 60);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,13 +69,18 @@ const Contact = () => {
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
-            <div className="flex-center card-border rounded-xl p-10">
+            <div 
+              ref={cardRef}
+              onMouseMove={handleMouseMove}
+              className="flex-center card card-border rounded-xl p-10"
+            >
+              <div className="glow"></div>
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className="w-full flex flex-col gap-7"
+                className="w-full flex flex-col gap-7 relative z-10"
               >
-                <div>
+                <div className="relative z-20">
                   <label htmlFor="name">Your name</label>
                   <input
                     type="text"
@@ -62,12 +88,13 @@ const Contact = () => {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="What’s your good name?"
+                    placeholder="What's your good name?"
                     required
+                    className="relative z-20"
                   />
                 </div>
 
-                <div>
+                <div className="relative z-20">
                   <label htmlFor="email">Your Email</label>
                   <input
                     type="email"
@@ -75,12 +102,13 @@ const Contact = () => {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="What’s your email address?"
+                    placeholder="What's your email address?"
                     required
+                    className="relative z-20"
                   />
                 </div>
 
-                <div>
+                <div className="relative z-20">
                   <label htmlFor="message">Your Message</label>
                   <textarea
                     id="message"
@@ -90,11 +118,12 @@ const Contact = () => {
                     placeholder="How can I help you?"
                     rows="5"
                     required
+                    className="relative z-20"
                   />
                 </div>
 
-                <button type="submit">
-                  <div className="cta-button group">
+                <button type="submit" className="relative z-20 group">
+                  <div className="cta-button">
                     <div className="bg-circle" />
                     <p className="text">
                       {loading ? "Sending..." : "Send Message"}

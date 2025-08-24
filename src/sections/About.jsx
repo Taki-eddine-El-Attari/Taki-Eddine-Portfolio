@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Globe from 'react-globe.gl';
 
 import Button2 from '../components/Button2.jsx';
+import TitleHeader from '../components/TitleHeader.jsx';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -122,7 +123,10 @@ const About = () => {
 
   return (
     <section className="c-space my-20" id="about">
-      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
+      <TitleHeader
+        title="About Me"
+      />
+      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 min-h-screen mt-16">
         <div className="col-span-1 xl:row-span-3">
           <div
             ref={(el) => (cardRefs.current[0] = el)}
