@@ -247,7 +247,7 @@ const socialImgs = [
   },
   {
     name: "x",
-    imgPath: "/images/x.png",
+    imgPath: "/images/github.png",
     link: "https://github.com/Taki-eddine-El-Attari",
   },
   {
