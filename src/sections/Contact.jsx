@@ -9,6 +9,8 @@ const Contact = () => {
   const cardRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const [shouldLoad3D, setShouldLoad3D] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -26,6 +28,43 @@ const Contact = () => {
     
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
+
+  // Intersection Observer to detect when Contact section is in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+        
+        // Only load the 3D model when in view
+        if (entry.isIntersecting) {
+          setShouldLoad3D(true);
+        } else {
+          // Add a small delay before unloading to prevent flickering when scrolling fast
+          setTimeout(() => {
+            if (!isInView) {
+              setShouldLoad3D(false);
+            }
+          }, 1000);
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+        rootMargin: '50px', // Start loading a bit before it comes into view
+      }
+    );
+
+    // Find the contact section element
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      observer.observe(contactSection);
+    }
+
+    return () => {
+      if (contactSection) {
+        observer.unobserve(contactSection);
+      }
+    };
+  }, [isInView]);
 
   // Mouse movement handler for border animation
   const handleMouseMove = (e) => {
@@ -81,7 +120,7 @@ const Contact = () => {
           sub="💬 Have questions or ideas? Let’s talk! 🚀"
         />
         <div className="grid-12-cols mt-16">
-          <div className={isMobile ? "col-span-1" : "xl:col-span-5"}>
+          <div className="xl:col-span-5">
             <div 
               ref={cardRef}
               onMouseMove={handleMouseMove}
@@ -149,13 +188,17 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          {!isMobile && (
-            <div className="xl:col-span-7 min-h-96">
+          <div className="xl:col-span-7 min-h-96">
+            {shouldLoad3D ? (
               <div className="bg-[#5c29a9] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
                 <ContactExperience />
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-purple-900/20 to-purple-700/20 rounded-3xl flex items-center justify-center">
+                <div className="text-white/50 text-sm">Loading 3D Contact Experience...</div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
