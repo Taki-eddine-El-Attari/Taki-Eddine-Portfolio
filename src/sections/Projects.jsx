@@ -161,8 +161,8 @@ const Projects = () => {
                 enableZoom={true} 
                 minDistance={1.7} 
                 maxDistance={6}
-                minAzimuthAngle={-Math.PI / 2}
-                maxAzimuthAngle={Math.PI / 2}
+                minAzimuthAngle={-Math.PI / 1.8}
+                maxAzimuthAngle={Math.PI / 1.8}
               />
             </Canvas>
           ) : (
