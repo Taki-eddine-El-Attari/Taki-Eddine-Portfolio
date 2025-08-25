@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { Suspense, useState, useRef } from 'react';
+import { Suspense, useState, useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 
@@ -13,7 +13,46 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+  const [shouldLoad3D, setShouldLoad3D] = useState(false);
   const leftCardRef = useRef(null);
+
+  // Intersection Observer to detect when Projects section is in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+        
+        // Only load the 3D model when in view
+        if (entry.isIntersecting) {
+          setShouldLoad3D(true);
+        } else {
+          // Add a small delay before unloading to prevent flickering when scrolling fast
+          setTimeout(() => {
+            if (!isInView) {
+              setShouldLoad3D(false);
+            }
+          }, 1000);
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+        rootMargin: '50px', // Start loading a bit before it comes into view
+      }
+    );
+
+    // Find the projects section element
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      observer.observe(projectsSection);
+    }
+
+    return () => {
+      if (projectsSection) {
+        observer.unobserve(projectsSection);
+      }
+    };
+  }, [isInView]);
 
   const handleLeftCardMouseMove = (e) => {
     const card = leftCardRef.current;
@@ -100,23 +139,37 @@ const Projects = () => {
         </div>
 
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          <Canvas dpr={[1, 2]} gl={{ physicallyCorrectLights: true }} >
-            <ambientLight intensity={1.2} />
-            <directionalLight position={[10, 10, 5]} intensity={1.2} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
-            <spotLight position={[0, 8, 8]} angle={0.3} penumbra={0.7} intensity={1.5} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
-            <Center>
-              <Suspense fallback={<CanvasLoader />}> 
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                  <DemoComputer texture={currentProject.texture} />
-                  {/* Screen glow effect */}
-                  <pointLight position={[0, 1.2, 1.2]} intensity={12} distance={20} color={'#ffffff'} />
-                  {/* Mouse glow effect */}
-                  <pointLight position={[2.5, 0.9, 1.2]} intensity={8} distance={8} color={'#ffffff'} />
-                </group>
-              </Suspense>
-            </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={true} minDistance={2} maxDistance={6} />
-          </Canvas>
+          {shouldLoad3D ? (
+            <Canvas dpr={[1, 2]} gl={{ physicallyCorrectLights: true }} >
+              <ambientLight intensity={1.2} />
+              <directionalLight position={[10, 10, 5]} intensity={1.2} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
+              <spotLight position={[0, 8, 8]} angle={0.3} penumbra={0.7} intensity={1.5} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
+              <Center>
+                <Suspense fallback={<CanvasLoader />}> 
+                  <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                    <DemoComputer texture={currentProject.texture} />
+                    {/* Screen glow effect */}
+                    <pointLight position={[0, 1.2, 1.2]} intensity={12} distance={20} color={'#ffffff'} />
+                    {/* Mouse glow effect */}
+                    <pointLight position={[2.5, 0.9, 1.2]} intensity={8} distance={8} color={'#ffffff'} />
+                  </group>
+                </Suspense>
+              </Center>
+              <OrbitControls 
+                maxPolarAngle={Math.PI / 2} 
+                enablePan={false} 
+                enableZoom={true} 
+                minDistance={1.7} 
+                maxDistance={6}
+                minAzimuthAngle={-Math.PI / 2}
+                maxAzimuthAngle={Math.PI / 2}
+              />
+            </Canvas>
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-gray-800/20 to-black-300/20 rounded-lg flex items-center justify-center">
+              <div className="text-white/50 text-sm">Loading 3D Project View...</div>
+            </div>
+          )}
         </div>
       </div>
     </section>
