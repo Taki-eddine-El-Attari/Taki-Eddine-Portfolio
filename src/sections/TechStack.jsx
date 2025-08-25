@@ -111,12 +111,7 @@ const TechStack = () => {
                   {shouldLoad3D ? (
                     <TechIconCardExperience model={techStackIcon} />
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-lg flex items-center justify-center">
-                      <img 
-                        src={techStackImgs.find(img => img.name === techStackIcon.name)?.imgPath || '/images/logos/react.png'} 
-                        alt={techStackIcon.name}
-                        className="w-12 h-12 object-contain opacity-50"
-                      />
+                    <div className="w-full h-full rounded-lg flex items-center justify-center">
                     </div>
                   )}
                 </div>
