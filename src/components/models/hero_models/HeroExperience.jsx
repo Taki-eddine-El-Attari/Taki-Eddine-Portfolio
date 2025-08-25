@@ -80,7 +80,7 @@ const HeroExperience = () => {
 
       <Suspense fallback={<CanvasLoader />}>
         <HeroLights />
-        {!isMobile && <Particles count={100} />}
+        <Particles count={isMobile ? 50 : 100} />
         <group
           scale={isMobile ? 0.7 : isLargeDesktop ? 1 : 0.7}
           position={[0, -3.5, 0]}
