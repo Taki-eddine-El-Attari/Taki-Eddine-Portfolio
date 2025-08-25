@@ -20,25 +20,31 @@ const HeroExperience = () => {
 
   // Intersection Observer to detect when Hero section is in view
   useEffect(() => {
+    let timeoutId;
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        const isCurrentlyInView = entry.isIntersecting;
+        setIsInView(isCurrentlyInView);
         
-        // Only load the model when in view
-        if (entry.isIntersecting) {
+        // Clear any existing timeout
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        
+        if (isCurrentlyInView) {
+          // Load immediately when in view
           setShouldLoad(true);
         } else {
-          // Add a small delay before unloading to prevent flickering when scrolling fast
-          setTimeout(() => {
-            if (!isInView) {
-              setShouldLoad(false);
-            }
+          // Add delay before unloading
+          timeoutId = setTimeout(() => {
+            setShouldLoad(false);
           }, 1000);
         }
       },
       {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: '50px', // Start loading a bit before it comes into view
+        threshold: 0.1,
+        rootMargin: '50px',
       }
     );
 
@@ -49,16 +55,19 @@ const HeroExperience = () => {
     }
 
     return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
       if (heroSection) {
         observer.unobserve(heroSection);
       }
     };
-  }, [isInView]);
+  }, []);
 
   // If model shouldn't load, show a placeholder
   if (!shouldLoad) {
     return (
-      <div className="w-full h-full bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-3xl flex items-center justify-center">
+      <div className="w-full h-full rounded-3xl flex items-center justify-center">
         <div className="text-white/50 text-sm">Loading 3D Experience...</div>
       </div>
     );
@@ -83,7 +92,7 @@ const HeroExperience = () => {
         <Particles count={100} speed={isMobile ? 2 : 1} />
         <group
           scale={isMobile ? 0.7 : isLargeDesktop ? 1 : 0.7}
-          position={[0, -3.5, 0]}
+          position={[0, isMobile ? -2.5 : -3.5, 0]}
           rotation={[0, -Math.PI / 4, 0]}
         >
           <Room />

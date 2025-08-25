@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useState, useEffect } from "react";
 
 import TitleHeader from "../components/TitleHeader";
 import TechIconCardExperience from "../components/models/tech_logos/TechIconCardExperience";
@@ -7,6 +8,55 @@ import { techStackIcons } from "../constants";
 import { techStackImgs } from "../constants";
 
 const TechStack = () => {
+  const [isInView, setIsInView] = useState(false);
+  const [shouldLoad3D, setShouldLoad3D] = useState(false);
+
+  // Intersection Observer to detect when Skills section is in view
+  useEffect(() => {
+    let timeoutId;
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const isCurrentlyInView = entry.isIntersecting;
+        setIsInView(isCurrentlyInView);
+        
+        // Clear any existing timeout
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        
+        if (isCurrentlyInView) {
+          // Load immediately when in view
+          setShouldLoad3D(true);
+        } else {
+          // Add delay before unloading
+          timeoutId = setTimeout(() => {
+            setShouldLoad3D(false);
+          }, 1000);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '50px',
+      }
+    );
+
+    // Find the skills section element
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+      observer.observe(skillsSection);
+    }
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      if (skillsSection) {
+        observer.unobserve(skillsSection);
+      }
+    };
+  }, []);
+
   // Animate the tech cards in the skills section
   useGSAP(() => {
     // This animation is triggered when the user scrolls to the #skills wrapper
@@ -58,7 +108,17 @@ const TechStack = () => {
                 {/* The tech-icon-wrapper div contains the TechIconCardExperience component, 
                     which renders the 3D model of the tech stack icon. */}
                 <div className="tech-icon-wrapper">
-                  <TechIconCardExperience model={techStackIcon} />
+                  {shouldLoad3D ? (
+                    <TechIconCardExperience model={techStackIcon} />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-lg flex items-center justify-center">
+                      <img 
+                        src={techStackImgs.find(img => img.name === techStackIcon.name)?.imgPath || '/images/logos/react.png'} 
+                        alt={techStackIcon.name}
+                        className="w-12 h-12 object-contain opacity-50"
+                      />
+                    </div>
+                  )}
                 </div>
                 {/* The padding-x and w-full classes are used to add horizontal padding to the 
                     text and make it take up the full width of the component. */}

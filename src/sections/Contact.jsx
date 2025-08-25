@@ -31,25 +31,31 @@ const Contact = () => {
 
   // Intersection Observer to detect when Contact section is in view
   useEffect(() => {
+    let timeoutId;
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        const isCurrentlyInView = entry.isIntersecting;
+        setIsInView(isCurrentlyInView);
         
-        // Only load the 3D model when in view
-        if (entry.isIntersecting) {
+        // Clear any existing timeout
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        
+        if (isCurrentlyInView) {
+          // Load immediately when in view
           setShouldLoad3D(true);
         } else {
-          // Add a small delay before unloading to prevent flickering when scrolling fast
-          setTimeout(() => {
-            if (!isInView) {
-              setShouldLoad3D(false);
-            }
+          // Add delay before unloading
+          timeoutId = setTimeout(() => {
+            setShouldLoad3D(false);
           }, 1000);
         }
       },
       {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: '50px', // Start loading a bit before it comes into view
+        threshold: 0.1,
+        rootMargin: '50px',
       }
     );
 
@@ -60,11 +66,14 @@ const Contact = () => {
     }
 
     return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
       if (contactSection) {
         observer.unobserve(contactSection);
       }
     };
-  }, [isInView]);
+  }, []);
 
   // Mouse movement handler for border animation
   const handleMouseMove = (e) => {
