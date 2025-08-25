@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { Suspense, useState, useRef } from 'react';
+import { Suspense, useState, useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 
@@ -13,7 +13,20 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const leftCardRef = useRef(null);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
 
   const handleLeftCardMouseMove = (e) => {
     const card = leftCardRef.current;
@@ -100,23 +113,38 @@ const Projects = () => {
         </div>
 
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          <Canvas dpr={[1, 2]} gl={{ physicallyCorrectLights: true }} >
-            <ambientLight intensity={1.2} />
-            <directionalLight position={[10, 10, 5]} intensity={1.2} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
-            <spotLight position={[0, 8, 8]} angle={0.3} penumbra={0.7} intensity={1.5} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
-            <Center>
-              <Suspense fallback={<CanvasLoader />}> 
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                  <DemoComputer texture={currentProject.texture} />
-                  {/* Screen glow effect */}
-                  <pointLight position={[0, 1.2, 1.2]} intensity={12} distance={20} color={'#ffffff'} />
-                  {/* Mouse glow effect */}
-                  <pointLight position={[2.5, 0.9, 1.2]} intensity={8} distance={8} color={'#ffffff'} />
-                </group>
-              </Suspense>
-            </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={true} minDistance={2} maxDistance={6} />
-          </Canvas>
+          {isMobile ? (
+            // Mobile fallback: Show project image/video instead of 3D
+            <div className="w-full h-full flex items-center justify-center relative overflow-hidden rounded-lg">
+              <img 
+                src={currentProject.spotlight || currentProject.logo} 
+                alt={currentProject.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="absolute bottom-4 left-4 text-white">
+                <h3 className="text-lg font-bold">{currentProject.title}</h3>
+              </div>
+            </div>
+          ) : (
+            <Canvas dpr={[1, 1.5]} gl={{ physicallyCorrectLights: true, antialias: false }} >
+              <ambientLight intensity={1.2} />
+              <directionalLight position={[10, 10, 5]} intensity={1.2} castShadow shadow-mapSize-width={1024} shadow-mapSize-height={1024} />
+              <spotLight position={[0, 8, 8]} angle={0.3} penumbra={0.7} intensity={1.5} castShadow shadow-mapSize-width={1024} shadow-mapSize-height={1024} />
+              <Center>
+                <Suspense fallback={<CanvasLoader />}> 
+                  <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                    <DemoComputer texture={currentProject.texture} />
+                    {/* Screen glow effect */}
+                    <pointLight position={[0, 1.2, 1.2]} intensity={12} distance={20} color={'#ffffff'} />
+                    {/* Mouse glow effect */}
+                    <pointLight position={[2.5, 0.9, 1.2]} intensity={8} distance={8} color={'#ffffff'} />
+                  </group>
+                </Suspense>
+              </Center>
+              <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={true} minDistance={2} maxDistance={6} />
+            </Canvas>
+          )}
         </div>
       </div>
     </section>
