@@ -50,7 +50,7 @@ const DemoComputer = (props) => {
           <mesh castShadow receiveShadow geometry={nodes.defaultMaterial_4.geometry} material={materials['01___Default']} />
           <mesh castShadow receiveShadow geometry={nodes.defaultMaterial_5.geometry} material={materials['01___Default']} />
           {/* Video screen overlay: position and scale to fit the monitor */}
-          <mesh position={[-0.156, 0.176, isMobile ? -0.231 : -0.2338]} rotation={[0, 0, 0]} scale={[1.4, 0.84, 1.5]}>
+          <mesh position={[-0.156, 0.176, isMobile ? -0.2325 : -0.2338]} rotation={[0, 0, 0]} scale={[1.4, 0.84, 1.5]}>
             <planeGeometry args={[1, 1]} />
             <meshBasicMaterial map={videoTexture} toneMapped={false} />
           </mesh>

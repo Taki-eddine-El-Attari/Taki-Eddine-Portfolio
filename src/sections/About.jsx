@@ -150,7 +150,7 @@ const About = () => {
             <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
 
             <div>
-              <p className="grid-headtext">Hi, I'm Taki eddine el Attari</p>
+              <p className="grid-headtext">Hi, I'm Taki eddine El attari</p>
               <p className="grid-subtext">
               A Full Stack Developer specializing in the MEAN stack. 
               I combine technical expertise with a creative approach to build modern and efficient web applications.
