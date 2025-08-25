@@ -238,18 +238,22 @@ const socialImgs = [
   {
     name: "insta",
     imgPath: "/images/insta.png",
+    link: "https://www.instagram.com/taki_eddine_11/",
   },
   {
     name: "fb",
     imgPath: "/images/fb.png",
+    link: "https://web.facebook.com/KITANEDI/",
   },
   {
     name: "x",
     imgPath: "/images/x.png",
+    link: "https://github.com/Taki-eddine-El-Attari",
   },
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+    link: "https://www.linkedin.com/in/taki-eddine-el-attari-06a95a27a/",
   },
 ];
 
