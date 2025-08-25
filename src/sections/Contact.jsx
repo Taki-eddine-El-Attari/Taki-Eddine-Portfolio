@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 import TitleHeader from "../components/TitleHeader";
@@ -8,11 +8,24 @@ const Contact = () => {
   const formRef = useRef(null);
   const cardRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  // Check if device is mobile on component mount
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
 
   // Mouse movement handler for border animation
   const handleMouseMove = (e) => {
@@ -68,7 +81,7 @@ const Contact = () => {
           sub="💬 Have questions or ideas? Let’s talk! 🚀"
         />
         <div className="grid-12-cols mt-16">
-          <div className="xl:col-span-5">
+          <div className={isMobile ? "col-span-1" : "xl:col-span-5"}>
             <div 
               ref={cardRef}
               onMouseMove={handleMouseMove}
@@ -123,7 +136,7 @@ const Contact = () => {
                 </div>
 
                 <button type="submit" className="relative z-20 group">
-                  <div className="cta-button">
+                  <div className={`cta-button ${isMobile ? 'scale-90' : ''}`}>
                     <div className="bg-circle" />
                     <p className="text">
                       {loading ? "Sending..." : "Send Message"}
@@ -136,11 +149,13 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          <div className="xl:col-span-7 min-h-96">
-            <div className="bg-[#5c29a9] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
-              <ContactExperience />
+          {!isMobile && (
+            <div className="xl:col-span-7 min-h-96">
+              <div className="bg-[#5c29a9] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
+                <ContactExperience />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

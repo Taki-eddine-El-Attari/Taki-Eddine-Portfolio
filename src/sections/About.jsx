@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const cardRefs = useRef([]);
   const globeRef = useRef();
 
@@ -43,9 +44,21 @@ const About = () => {
     });
   }, []);
 
+  // Check if device is mobile on component mount
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
   // Enable smooth auto-rotate before user interaction, stop on first interaction
   useEffect(() => {
-    if (!globeRef.current) return;
+    if (isMobile || !globeRef.current) return;
     const controls = globeRef.current.controls();
     if (!controls) return;
 
@@ -60,11 +73,11 @@ const About = () => {
     return () => {
       controls.removeEventListener('start', stopAutoRotate);
     };
-  }, []);
+  }, [isMobile]);
 
   // Center the globe camera on my location label
   const handleLocateMe = () => {
-    if (!globeRef.current) return;
+    if (isMobile || !globeRef.current) return;
     const controls = globeRef.current.controls && globeRef.current.controls();
     if (controls) controls.autoRotate = false;
     // Tangier, Morocco
@@ -165,7 +178,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="col-span-1 xl:row-span-4">
+        <div className="col-span-1 xl:row-span-4 hidden md:block">
           <div
             ref={(el) => (cardRefs.current[2] = el)}
             onMouseMove={handleMouseMove(2)}
@@ -173,18 +186,20 @@ const About = () => {
           >
             <div className="glow"></div>
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center globe-container">
-              <Globe
-                ref={globeRef}
-                height={326}
-                width={326}
-                backgroundColor="rgba(0, 0, 0, 0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[{ lat: 35.0595, lng: -5.6340, text: "I'm here!", color: 'white', size: 15 }]}
-              />
+              {!isMobile && (
+                <Globe
+                  ref={globeRef}
+                  height={326}
+                  width={326}
+                  backgroundColor="rgba(0, 0, 0, 0)"
+                  backgroundImageOpacity={0.5}
+                  showAtmosphere
+                  showGraticules
+                  globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+                  bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                  labelsData={[{ lat: 35.0595, lng: -5.6340, text: "I'm here!", color: 'white', size: 15 }]}
+                />
+              )}
             </div>
             <div>
               <p className="grid-headtext">Open to Global Opportunities</p>
