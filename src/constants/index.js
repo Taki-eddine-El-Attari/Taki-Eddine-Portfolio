@@ -152,7 +152,7 @@ const expCards = [
     logoPath: "/images/logo4.png",
     title: "Frontend Developer",
     date: "July 2025 - Present",
-    company: "Avatech",
+    company: "Avatech Tools - Málaga",
     responsibilities: [
       "Engineered core user features for the Naaora platform, including the intuitive store setup process and customizable design templates",
       "Translated complex UI/UX designs into a responsive, high-performance frontend to ensure a seamless experience for store owners.",
@@ -165,7 +165,7 @@ const expCards = [
     logoPath: "/images/logo5.png",
     title: "Full Stack Developer",
     date: "April 2025 - June 2025",
-    company: "Smart Automation Technologies",
+    company: "Smart Automation Technologies - Tangier",
     responsibilities: [
       "Developed a B2B marketplace platform using the MEAN stack to optimize the management of services and e-services.",
       "Focused on the frontend development, designing and implementing user interfaces with Angular.",
