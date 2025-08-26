@@ -259,39 +259,44 @@ const socialImgs = [
 
 const myProjects = [
   {
-    title: 'Podcastr - AI Podcast Platform',
-    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    title: 'Quilo – Blog Platform',
+    desc: 'Quilo is a powerful full-stack web application built with the MEAN stack (MongoDB, Express.js, Angular, Node.js) that streamlines blog creation and management. With features like article CRUD operations, image uploads, and JWT-based authentication, it enables authors to easily publish and manage their content.',
     subdesc:
-      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+      'Developed with Angular, Bootstrap, RxJS, and a RESTful API backend, Quilo delivers a modern, responsive, and scalable platform for bloggers and content creators.',
+    href: 'https://github.com/Taki-eddine-El-Attari/Quilo-MEAN',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
-      backgroundColor: '#2A1816',
-      border: '0.2px solid #36201D',
-      boxShadow: '0px 0px 60px 0px #AA3C304D',
+      backgroundColor: '#F4F4F4',
+      border: '0.2px solid #499EFC',
+      boxShadow: '0px 0px 60px 0px #1d3b5e',
     },
-    spotlight: '/assets/spotlight1.png',
+    spotlight: '/assets/spotlight2.png',
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
+        name: 'MongoDB',
+        path: '/assets/mongodb.png',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'Express.js',
+        path: '/assets/expressjs.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'Angular',
+        path: '/assets/angular.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'Nodejs',
+        path: '/assets/node.png',
+      },
+      {
+        id: 5,
+        name: 'Bootstrap',
+        path: '/assets/bootstrap.png',
       },
     ],
   },

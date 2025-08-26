@@ -156,7 +156,10 @@ const Projects = () => {
               <Center>
                 <Suspense fallback={<CanvasLoader />}> 
                   <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                    <DemoComputer texture={currentProject.texture} />
+                    <DemoComputer 
+                      key={selectedProjectIndex} 
+                      texture={currentProject.texture} 
+                    />
                     {/* Screen glow effect */}
                     <pointLight position={[0, 1.2, 1.2]} intensity={12} distance={20} color={'#ffffff'} />
                     {/* Mouse glow effect */}

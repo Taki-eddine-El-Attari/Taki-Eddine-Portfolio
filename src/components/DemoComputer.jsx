@@ -12,6 +12,23 @@ const DemoComputer = (props) => {
   const { nodes, materials } = useGLTF('/models/scene.gltf');
   const videoTexture = useVideoTexture(props.texture);
 
+  // Optimize video playback for large files
+  useEffect(() => {
+    if (videoTexture && videoTexture.image) {
+      const video = videoTexture.image;
+      
+      // Configure for better large file handling
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.preload = 'metadata'; // Load only metadata first
+      
+      // Reset and play
+      video.currentTime = 0;
+      video.play().catch(console.error);
+    }
+  }, [props.texture, videoTexture]);
+
   // Check if device is mobile
   useEffect(() => {
     const checkIsMobile = () => {
