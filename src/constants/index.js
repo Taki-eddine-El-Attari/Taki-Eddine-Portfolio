@@ -301,19 +301,19 @@ const myProjects = [
     ],
   },
   {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
-    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+    title: 'Momentify – Event Management Platform',
+    desc: 'Momentify is an event management platform that simplifies organizing professional and personal events. It combines a Laravel REST API with a modern React frontend, allowing users to create, manage, and track events seamlessly.',
     subdesc:
-      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+      'The platform supports three user roles with distinct dashboards and features. This role-based system gives administrators, organizers, and participants tailored tools for efficient event management.',
+    href: 'https://momentify.social/',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
     logoStyle: {
-      backgroundColor: '#13202F',
-      border: '0.2px solid #17293E',
-      boxShadow: '0px 0px 60px 0px #2F6DB54D',
+      backgroundColor: '#153517',
+      border: '0.2px solid #5CDF60',
+      boxShadow: '0px 0px 60px 0px #1c441e',
     },
-    spotlight: '/assets/spotlight2.png',
+    spotlight: '/assets/spotlight3.png',
     tags: [
       {
         id: 1,
@@ -322,18 +322,13 @@ const myProjects = [
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'Laravel',
+        path: 'assets/laravel.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'MySQL',
+        path: '/assets/mysql.png',
       },
     ],
   },
