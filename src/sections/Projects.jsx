@@ -126,14 +126,16 @@ const Projects = () => {
               ))}
             </div>
 
-            <a
-              className="flex items-center gap-2 cursor-pointer text-white-600 z-10"
-              href={currentProject.href}
-              target="_blank"
-              rel="noreferrer">
-              <p>Check Live Site</p>
-              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
-            </a>
+            {currentProject.HasUrl && (
+              <a
+                className="flex items-center gap-2 cursor-pointer text-white-600 z-10"
+                href={currentProject.href}
+                target="_blank"
+                rel="noreferrer">
+                <p>{currentProject.linkLabel || 'Check Live Site'}</p>
+                <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+              </a>
+            )}
           </div>
 
           <div className="flex justify-between items-center mt-7 z-10">

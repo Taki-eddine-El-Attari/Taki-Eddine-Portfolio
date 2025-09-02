@@ -264,6 +264,8 @@ const myProjects = [
     subdesc:
       'Developed with Angular, Bootstrap, RxJS, and a RESTful API backend, Quilo delivers a modern, responsive, and scalable platform for bloggers and content creators.',
     href: 'https://github.com/Taki-eddine-El-Attari/Quilo-MEAN',
+    linkLabel: 'Check Code',
+    HasUrl: true,
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
@@ -306,6 +308,8 @@ const myProjects = [
     subdesc:
       'The platform supports three user roles with distinct dashboards and features. This role-based system gives administrators, organizers, and participants tailored tools for efficient event management.',
     href: 'https://momentify.social/',
+    linkLabel: 'Check Live Site',
+    HasUrl: true,
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
     logoStyle: {
@@ -333,115 +337,80 @@ const myProjects = [
     ],
   },
   {
-    title: 'CarePulse - Health Management System',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+    title: 'Omnilog - B2B Services & E-Services Platform',
+    desc: 'As part of my final-year internship at Smart Automation Technologies, I contributed to developing a B2B web marketplace using the MEAN stack with PrimeNG for styling and components. I worked on both the administrator and user interfaces, focusing on scalability, usability, and delivering a modern user experience.',
     subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
+      'Additionally, I built and integrated an intelligent chatbot (RAG-based) to assist users in real time, providing contextual guidance and improving usability.',
     href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+    linkLabel: 'Check Live Site',
+    HasUrl: false,
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
     logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+      backgroundColor: '#d5dde6',
+      border: '0.2px solid #1874D2',
+      boxShadow: '0px 0px 60px 0px #0e3a65',
     },
-    spotlight: '/assets/spotlight3.png',
+    spotlight: '/assets/spotlight2.png',
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
-  {
-    title: 'EcoTracker - Environmental Impact Monitor',
-    desc: 'EcoTracker is a comprehensive environmental monitoring application that helps users track and reduce their carbon footprint. It provides detailed insights into daily activities and suggests eco-friendly alternatives.',
-    subdesc:
-      'Built with React, Node.js, and MongoDB, EcoTracker features real-time data visualization, personalized recommendations, and community challenges to promote sustainable living.',
-    href: 'https://www.youtube.com/watch?v=example',
-    texture: '/textures/project/project4.mp4',
-    logo: '/assets/project-logo4.png',
-    logoStyle: {
-      backgroundColor: '#4CAF50',
-      border: '0.2px solid #45a049',
-      boxShadow: '0px 0px 60px 0px rgba(76, 175, 80, 0.3)',
-    },
-    spotlight: '/assets/spotlight4.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'Node.js',
-        path: '/assets/node.png',
-      },
-      {
-        id: 3,
         name: 'MongoDB',
         path: '/assets/mongodb.png',
       },
       {
-        id: 4,
+        id: 2,
         name: 'Express.js',
-        path: '/assets/express.png',
+        path: '/assets/expressjs.png',
+      },
+      {
+        id: 3,
+        name: 'Angular',
+        path: '/assets/angular.png',
+      },
+      {
+        id: 4,
+        name: 'Nodejs',
+        path: '/assets/node.png',
+      },
+      {
+        id: 5,
+        name: 'PrimeNG',
+        path: '/assets/primeng.png',
       },
     ],
   },
   {
-    title: 'SmartHome Hub - IoT Control Center',
-    desc: 'SmartHome Hub is an intelligent home automation system that centralizes control of all smart devices. It provides a unified interface for managing lighting, security, climate control, and entertainment systems.',
+    title: 'Tech Horizons – Online Magazine Platform',
+    desc: 'Tech Horizons is my first academic project, a digital platform for an online magazine about AI, IoT, and cybersecurity. It was built entirely with Laravel (Blade templates) using custom CSS and JavaScript, to let users discover and contribute to tech content easily.',
     subdesc:
-      'Developed using React Native, Python, and AWS IoT services, SmartHome Hub offers real-time monitoring, automated routines, and voice control integration for a seamless smart home experience.',
-    href: 'https://www.youtube.com/watch?v=example2',
-    texture: '/textures/project/project5.mp4',
-    logo: '/assets/project-logo5.png',
+      'The system supports three roles: guests, subscribers and editors,each with their own dashboard and tools. This role-based approach ensured personalized experiences while teaching me the fundamentals of building scalable and structured applications.',
+    href: 'https://tech-horizons.rf.gd',
+    linkLabel: 'Check Live Site',
+    HasUrl: true,
+    texture: '/textures/project/project4.mp4',
+    logo: '/assets/project-logo4.png',
     logoStyle: {
-      backgroundColor: '#2196F3',
-      border: '0.2px solid #1976D2',
-      boxShadow: '0px 0px 60px 0px rgba(33, 150, 243, 0.3)',
+      backgroundColor: '#d9eafd',
+      border: '0.2px solid #45a049',
+      boxShadow: '0px 0px 60px 0px #3d398c',
     },
     spotlight: '/assets/spotlight5.png',
     tags: [
       {
         id: 1,
-        name: 'React Native',
-        path: '/assets/react.svg',
+        name: 'Laravel',
+        path: '/assets/laravel.png',
       },
       {
         id: 2,
-        name: 'Python',
-        path: '/assets/python.svg',
+        name: 'CSS',
+        path: '/assets/css.png',
       },
       {
         id: 3,
-        name: 'AWS IoT',
-        path: '/assets/aws.png',
-      },
-      {
-        id: 4,
-        name: 'MQTT',
-        path: '/assets/mqtt.png',
+        name: 'JavaScript',
+        path: '/assets/js.png',
       },
     ],
   },
