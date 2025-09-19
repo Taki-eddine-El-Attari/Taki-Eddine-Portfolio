@@ -151,7 +151,7 @@ const expCards = [
     imgPath: "/images/exp4.png",
     logoPath: "/images/logo4.png",
     title: "Frontend Developer",
-    date: "July 2025 - Present",
+    date: "July 2025 - September 2025",
     company: "Avatech Tools - Málaga",
     responsibilities: [
       "Engineered core user features for the Naaora platform, including the intuitive store setup process and customizable design templates",
