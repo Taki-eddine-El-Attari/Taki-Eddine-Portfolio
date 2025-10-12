@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <TITLE>Email Signature - Taki Eddine El Attari</TITLE>
+    <META content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        body.dark-mode {
+            background-color: #1c1c21;
+            color: #ffffff;
+        }
+        body.dark-mode [style*="color:#000000"],
+        body.dark-mode [style*="color: #000000"] {
+            color: #ffffff !important;
+        }
+        body.dark-mode [style*="color:#666666"],
+        body.dark-mode [style*="color: #666666"] {
+            color: #b0b0b0 !important;
+        }
+        body.dark-mode hr {
+            border-top-color: #444444 !important;
+        }
+        body.dark-mode [style*="border: 1px solid #cccccc"] {
+            border-color: #444444 !important;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 12px 24px;
+            background: #0377D0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Mona Sans', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(3, 119, 208, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .theme-toggle:hover {
+            background: #025a9e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(3, 119, 208, 0.4);
+        }
+        .theme-toggle:active {
+            transform: translateY(0);
+        }
+        .theme-icon {
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.getElementById('themeToggle');
+            const icon = document.getElementById('themeIcon');
+            const text = document.getElementById('themeText');
+            
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                icon.textContent = '☀️';
+                text.textContent = 'Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                icon.textContent = '🌙';
+                text.textContent = 'Dark Mode';
+            }
+        }
+        
+        // Set initial theme to light mode
+        window.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('light-mode');
+        });
+    </script>
+</HEAD>
+<BODY style="margin: 0; padding: 20px; font-family: 'Mona Sans', Arial, sans-serif;">
+    
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">
+        <span id="themeIcon" class="theme-icon">🌙</span>
+        <span id="themeText">Dark Mode</span>
+    </button>
+    
+    <div style="margin-bottom: 60px;">
+        <h3 style="font-family: 'Mona Sans', Arial, sans-serif; color:#000000; margin-bottom: 20px; font-size: 16px;">Design 1: Classic with Gradient Accent (Light/Dark Compatible)</h3>
+        
+        <!-- DESIGN 1: Classic Layout with Gradient Accent -->
+        <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Mona Sans', Arial, sans-serif; font-size: 14px; line-height: 1.6; background: transparent !important;">
+            <tbody>
+                <tr>
+                    <td style="padding-right: 20px; border-right: 3px solid #0377D0; vertical-align: top;">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span style="display: block; margin: 0 0 4px 0; font-size: 20px; font-weight: 700; color: #0377D0; font-family: 'Mona Sans', Arial, sans-serif;">Taki Eddine El Attari</span>
+                                        <span style="display: block; margin: 0 0 12px 0; font-size: 13px; color: #666666; font-family: 'Mona Sans', Arial, sans-serif;">Full Stack Developer</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 8px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding-right: 8px;">
+                                                        <a href="https://www.linkedin.com/in/taki-eddine-el-attari-06a95a27a/" target="_blank" style="text-decoration: none;">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="24" height="24" style="width: 24px; height: 24px; display: block; border: 0;" />
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding-right: 8px;">
+                                                        <a href="https://github.com/Taki-eddine-El-Attari" target="_blank" style="text-decoration: none;">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="24" height="24" style="width: 24px; height: 24px; display: block; border: 0;" />
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding-right: 8px;">
+                                                        <a href="https://www.instagram.com/taki_eddine_11/" target="_blank" style="text-decoration: none;">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="24" height="24" style="width: 24px; height: 24px; display: block; border: 0;" />
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://web.facebook.com/KITANEDI/" target="_blank" style="text-decoration: none;">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" width="24" height="24" style="width: 24px; height: 24px; display: block; border: 0;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="padding-left: 20px; vertical-align: top;">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td style="padding-bottom: 6px;">
+                                        <span style="color: #666666; font-size: 13px; font-family: 'Mona Sans', Arial, sans-serif;"><strong style="color:#000000;">M:</strong> +212 604 198 151</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 6px;">
+                                        <span style="color: #666666; font-size: 13px; font-family: 'Mona Sans', Arial, sans-serif;"><strong style="color:#000000;">E:</strong> <a href="mailto:takieddineelattari@gmail.com" style="color: #0377D0; text-decoration: none; font-family: 'Mona Sans', Arial, sans-serif;">takieddineelattari@gmail.com</a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 6px;">
+                                        <span style="color: #666666; font-size: 13px; font-family: 'Mona Sans', Arial, sans-serif;"><strong style="color:#000000;">W:</strong> <a href="https://takieddine.me" style="color: #0377D0; text-decoration: none; font-family: 'Mona Sans', Arial, sans-serif;">www.takieddine.me</a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="color: #666666; font-size: 13px; font-family: 'Mona Sans', Arial, sans-serif;"><strong style="color:#000000;">A:</strong> Tangier, Morocco</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #cccccc; margin: 40px 0;">
+
+    <div style="margin-bottom: 60px;">
+        <h3 style="font-family: 'Mona Sans', Arial, sans-serif; color:#000000; margin-bottom: 20px; font-size: 16px;">Design 4: Compact Horizontal (Light/Dark Compatible)</h3>
+        
+        <!-- DESIGN 4: Compact Horizontal -->
+        <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Mona Sans', Arial, sans-serif; background: transparent !important;">
+            <tbody>
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align: top; padding-right: 20px;">
+                                        <span style="display: block; margin: 0 0 4px 0; font-size: 18px; font-weight: 700; color: #0377D0; font-family: 'Mona Sans', Arial, sans-serif;">Taki Eddine El Attari</span>
+                                        <span style="display: block; margin: 0; font-size: 13px; color: #666666; font-family: 'Mona Sans', Arial, sans-serif;">Full Stack Developer</span>
+                                    </td>
+                                    <td style="vertical-align: top; padding-left: 20px; border-left: 2px solid #0377D0;">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="font-size: 12px; color: #666666; padding-bottom: 4px; font-family: 'Mona Sans', Arial, sans-serif;">
+                                                        <strong style="color:#000000;">E:</strong> <a href="mailto:takieddineelattari@gmail.com" style="color: #0377D0; text-decoration: none; font-family: 'Mona Sans', Arial, sans-serif;">takieddineelattari@gmail.com</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 12px; color: #666666; padding-bottom: 4px; font-family: 'Mona Sans', Arial, sans-serif;">
+                                                        <strong style="color:#000000;">M:</strong> +212 604 198 151
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 12px; color: #666666; font-family: 'Mona Sans', Arial, sans-serif;">
+                                                        <strong style="color:#000000;">W:</strong> <a href="https://takieddine.me" style="color: #0377D0; text-decoration: none; font-family: 'Mona Sans', Arial, sans-serif;">www.takieddine.me</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td style="vertical-align: middle; padding-left: 20px;">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding-right: 8px;">
+                                                        <a href="https://www.linkedin.com/in/taki-eddine-el-attari-06a95a27a/" target="_blank" style="text-decoration: none;">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" height="20" style="width: 20px; height: 20px; display: block; border: 0;" />
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding-right: 8px;">
+                                                        <a href="https://github.com/Taki-eddine-El-Attari" target="_blank" style="text-decoration: none;">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="20" height="20" style="width: 20px; height: 20px; display: block; border: 0;" />
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding-right: 8px;">
+                                                        <a href="https://www.instagram.com/taki_eddine_11/" target="_blank" style="text-decoration: none;">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="20" height="20" style="width: 20px; height: 20px; display: block; border: 0;" />
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="https://web.facebook.com/KITANEDI/" target="_blank" style="text-decoration: none;">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" width="20" height="20" style="width: 20px; height: 20px; display: block; border: 0;" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #cccccc; margin: 40px 0;">
+
+    <!-- Instructions Section -->
+    <div style="margin-top: 40px; padding: 20px; border: 1px solid #cccccc; border-radius: 8px; background: transparent !important;">
+        <h2 style="color:#000000; font-family: 'Mona Sans', Arial, sans-serif; font-size: 18px; margin-top: 0;">📋 How to Use These Email Signatures</h2>
+        
+        <h3 style="color:#000000; font-family: 'Mona Sans', Arial, sans-serif; font-size: 14px;">✨ Theme Compatibility:</h3>
+        <p style="color:#000000; font-family: 'Mona Sans', Arial, sans-serif; line-height: 1.6; font-size: 13px;">
+            Both signatures automatically adapt to Gmail's light and dark themes:<br>
+            • <strong>Light theme:</strong> Text appears dark, backgrounds stay light<br>
+            • <strong>Dark theme:</strong> Text inverts to light, maintaining readability<br>
+            • <strong>Accent colors</strong> (#0377D0 blue) remain consistent in both themes
+        </p>
+
+        <h3 style="color:#000000; font-family: 'Mona Sans', Arial, sans-serif; font-size: 14px;">📝 Setup Instructions:</h3>
+        <ol style="color:#000000; font-family: 'Mona Sans', Arial, sans-serif; line-height: 1.8; font-size: 13px;">
+            <li><strong>Update your information:</strong>
+                <ul>
+                    <li>Replace "+212 123 456 789" with your actual phone number</li>
+                    <li>Replace "www.yourportfolio.com" with your portfolio URL</li>
+                </ul>
+            </li>
+            <li><strong>Choose your preferred design</strong> (Design 1 or Design 4)</li>
+            <li><strong>Open this HTML file</strong> in your web browser</li>
+            <li><strong>Select and copy</strong> the signature table (not including the title)</li>
+            <li><strong>Paste into email client:</strong>
+                <ul>
+                    <li><strong>Gmail:</strong> Settings (gear icon) → See all settings → General → Signature → Create new → Paste</li>
+                    <li><strong>Outlook:</strong> File → Options → Mail → Signatures → New → Paste</li>
+                    <li><strong>Apple Mail:</strong> Mail → Preferences → Signatures → + → Paste</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3 style="color:#000000; font-family: 'Mona Sans', Arial, sans-serif; font-size: 14px;">🎨 Design Features:</h3>
+        <p style="color:#000000; font-family: 'Mona Sans', Arial, sans-serif; line-height: 1.6; font-size: 13px;">
+            <strong>Design 1:</strong> Classic vertical divider with gradient accent<br>
+            <strong>Design 4:</strong> Compact horizontal layout, perfect for shorter emails
+        </p>
+
+        <p style="color: #666666; font-family: 'Mona Sans', Arial, sans-serif; font-size: 12px; margin-bottom: 0; font-style: italic;">
+            💡 <strong>Pro Tip:</strong> Test your signature in both light and dark modes to ensure it looks great in all viewing conditions!
+        </p>
+    </div>
+
+</BODY>
+</HTML>
