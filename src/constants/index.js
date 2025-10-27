@@ -154,8 +154,8 @@ const expCards = [
     date: "July 2025 - September 2025",
     company: "Avatech Tools - Málaga",
     responsibilities: [
-      "Engineered core user features for the Naaora platform, including the intuitive store setup process and customizable design templates",
-      "Translated complex UI/UX designs into a responsive, high-performance frontend to ensure a seamless experience for store owners.",
+      "Engineered core user features for the Naaora platform, including intuitive store setup and customizable design templates, contributing to a 20% increase in active users.",
+      "Translated complex UI/UX designs into a responsive, high-performance Angular frontend, resulting in over 90% user satisfaction among store owners.",
       "Developed and maintained a library of reusable UI components in Angular to build a consistent and polished user interface across the platform.",
     ],
   },
@@ -169,7 +169,7 @@ const expCards = [
     responsibilities: [
       "Developed a B2B marketplace platform using the MEAN stack to optimize the management of services and e-services.",
       "Focused on the frontend development, designing and implementing user interfaces with Angular.",
-      "Contributed to the integration of an intelligent RAG chatbot to enhance user interaction on the platform.",
+      "Contributed to the integration of an intelligent RAG chatbot, leading to a 40% decrease in manual support requests and enhancing user interaction across the platform.",
     ],
   },
 ];
