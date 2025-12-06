@@ -1,12 +1,13 @@
 /**
  * A reusable CTA button component.
- * When clicked, it scrolls smoothly to the section with ID "projects",
+ * When clicked, it scrolls smoothly to the section with ID matching the href,
  * with a small offset from the top for better visual placement.
  */
 
-const Button = ({ text, className, id }) => {
+const Button = ({ text, className, id, href = "#projects" }) => {
   return (
     <a
+      href={href}
       onClick={(e) => {
         e.preventDefault(); // Stop the link from jumping instantly
 
